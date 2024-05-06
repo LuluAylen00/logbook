@@ -1,0 +1,238 @@
+* {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+	box-sizing: border-box;
+}
+
+:root {
+	--blue: #3f9ccc;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	color: #030303;
+	font-family: sans-serif;
+	
+}
+
+main {
+	display: flex;
+}
+
+#finder {
+	position: absolute;
+	z-index: 9;
+	background-color: #f1f1f1;
+	border: 1px solid #d3d3d3;
+	text-align: center;
+	height: 50vh;
+    width: 40vw;
+	display: none;
+}
+
+#finder.show {
+	display: flex;
+	flex-direction: column;
+}
+  
+#finder-header {
+	padding: 10px;
+	cursor: move;
+	z-index: 10;
+	background-color: #2196F3;
+	color: #fff;
+}
+
+#finder iframe {
+	width: 100%;
+	height: 100%;
+}
+
+.special-border {
+	border: 3px solid var(--blue);
+	padding: 2px;
+	border-radius: 7px;
+	margin: 2px;
+	position: relative;
+	z-index: 1;
+}
+
+.label-cont {
+	display: flex;
+	flex-direction: column;
+}
+
+.card-row {
+	display: flex;
+	align-items: center;
+}
+
+main {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+div#card {
+	background-color: #cccccc;
+	border: var(--blue) 2px solid;
+	padding: 3%;
+    border-radius: 25px;
+    width: 97%;
+    height: 97%;
+	overflow: hidden;
+	display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#card-top {
+	display: flex;
+	justify-content: space-between;
+}
+
+#card-top-left {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	width: 100%;
+}
+
+#manual-time-button.enabled { 
+	background-color: blue;
+	color: white;
+}
+
+div#card #card-top img {
+	width: 300px;
+}
+
+input:not(#name-obs input) {
+	font-weight: bold;
+	text-transform:uppercase;
+}
+
+#date-input{
+	font-size: 20px;
+}
+
+#times input {
+	width: 125px;
+	text-align: center;
+}
+
+#times {
+	display: flex;
+	align-items: center;
+	margin-left: 25%;
+}
+
+#start-time, #end-time {
+	display: flex;
+	align-items: center;	
+}
+
+#start-input, #end-input {
+	font-size: 22px;
+	/* width:30%; */
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+    background: none;
+	display: none;
+}
+
+#freq-mode > span {
+	margin-right: 15px;
+}
+
+#freq-mode input{
+	font-size: 2rem;
+    width: 130px;
+    text-align: center;
+}
+
+span#complete-qso {
+	display: flex;
+	align-items: center;
+}
+
+div#card #card-top span#complete-qso input {
+	font-size: 3rem;
+    width: 300px;
+    text-align: center;
+}
+
+div#card #card-top span#complete-qso img {
+	width: 80px;
+	padding-top: 20px;
+    margin-left: 10px;
+}
+
+#qso-rsts {
+	display: flex;
+	justify-content: space-between;
+}
+
+#rsts input {
+	width: 50px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+#name-obs {
+	justify-content: space-between;
+}
+
+#name {
+	width: 30%;
+}
+
+#name input {
+	font-size: 2.5rem;
+	padding: 10px;
+}
+
+#obs {
+	width: 65%;
+}
+
+#obs textarea {
+	font-size: 1.2rem;
+	padding: 10px;
+}
+
+#card-bottom {
+	overflow: auto;
+    height: 30%;
+}
+
+.table>:not(caption)>*>* {
+    padding: 0.5rem .3em;
+}
+
+table {
+	margin: 0 !important;
+}
+
+#card-bottom-footer {
+	display: flex;
+	justify-content: space-between;
+}
+
+#card-bottom-footer label, #card-bottom-footer button {
+	padding: 10px;
+}
+
+input[type="file"] {
+	display: none;
+}
+
+button {
+	outline: 0;
+    border: 0;
+    background-color: inherit;
+}

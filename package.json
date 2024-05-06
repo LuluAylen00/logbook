@@ -1,0 +1,20 @@
+{
+  "name": "poketest",
+  "version": "1.0.0",
+  "description": "Experimento con JavaScript de Front",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon ./src/app.js",
+    "start": "node ./src/app.js"
+  },
+  "keywords": [],
+  "author": "luluaylen00 <luluaylen00@gmail.com> (https://github.com/LuluAylen00)",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.18.2",
+    "multer": "1.4.5-lts.1"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.21"
+  }
+}

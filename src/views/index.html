@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poketest</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/autonumeric/4.10.0/autoNumeric.js" integrity="sha512-GsJ0NN3UU7tULjycUDKqMOsOqD3XUt5+sRPm6CKw6v6nEqpcSqOf3+Uk4H/eshI6KnIUE+XuF3InnjTwwBW30Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <main>
+        <div id="card">
+            <div id="card-top">
+                <div id="card-top-left">
+                    <div id="date-time" class="card-row">
+                        <span id="date" class="label-cont">
+                            <label for="date-input">FECHA</label>
+                            <input type="date" id="date-input" name="date" class="special-border">
+                        </span>
+                        <div id="times" class="card-row">
+                            <button class="special-border" id="reset-time-button">R</button>
+                            <span id="start-time" class="label-cont">
+                                <label for="start-input">INICIO</label>
+                                <input type="time" autocomplete="off" id="start-input" name="start" class="special-border">
+                            </span>
+                            <span id="end-time" class="label-cont">
+                                <label for="end-input">FINAL</label>
+                                <input type="time" autocomplete="off" id="end-input" name="end" class="special-border">
+                            </span>
+                            <button class="special-border" id="manual-time-button">M</button>
+                        </div>
+                    </div>
+                    <div id="freq-mode" class="card-row">
+                        <span id="freq" class="label-cont">
+                            <label for="freq-input">FREC.</label>
+                            <input type="text" autocomplete="off" id="freq-input" name="freq" class="special-border" value="">
+                        </span>
+                        <span id="band" class="label-cont">
+                            <label for="band-input">BAND</label>
+                            <select id="band-input">
+                                <option value="10m">10m</option>
+                                <option value="12m">12m</option>
+                                <option value="15m">15m</option>
+                                <option value="17m">17m</option>
+                                <option value="20m">20m</option>
+                                <option value="30m">30m</option>
+                                <option value="40m" selected>40m</option>
+                                <option value="80m">80m</option>
+                            </select>
+                        </span>
+                        <span id="mode" class="label-cont">
+                            <label for="mode-input">MODO</label>
+                            <input type="text" autocomplete="off" id="mode-input" list="mode-input-values" name="mode" class="special-border">
+                            <datalist id="mode-input-values">
+                                <option value="LSB">LSB</option>
+                                <option value="USB">USB</option>
+                                <option value="CW">CW</option>
+                            </datalist>
+                        </span>
+                    </div>
+                    <div id="qso-rsts" class="card-row">
+                        <span id="complete-qso">
+                            <span id="qso" class="label-cont">
+                                <label for="qso-input">QSO con</label>
+                                <input type="text" autocomplete="off" id="qso-input" name="qso" class="special-border">
+                            </span>
+                            <i id="qrzcq-button" class="fa-solid fa-globe"></i>
+                            <img id="country-image" src="/img/default-flag.png" alt="">
+                        </span>
+                        <div id="rsts" class="card-row">
+                            <span id="rst-send" class="label-cont">
+                                <label for="rst-send-input">RST E.</label>
+                                <input type="text" autocomplete="off" id="rst-send-input" name="rst-send" class="special-border" value="59">
+                            </span>
+                            <span id="rst-received" class="label-cont">
+                                <label for="rst-received-input">RST R.</label>
+                                <input type="text" autocomplete="off" id="rst-received-input" name="rst-received" class="special-border" value="59">
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div id="card-top-right">
+                    <img src="/logo.png" />
+                </div>
+            </div>
+            <div id="card-middle">
+                <div id="name-obs" class="card-row">
+                    <span id="name" class="label-cont">
+                        <label for="name-input">NOMBRE</label>
+                        <input type="text" autocomplete="off" id="name-input" name="name" class="special-border">
+                    </span>
+                    <span id="obs" class="label-cont">
+                        <label for="obs-input">OBSERVACIONES</label>
+                        <textarea maxlength="50" id="obs-input" name="obs" class="special-border"></textarea>
+                    </span>
+                </div>
+                <div id="list">
+                </div>
+                
+            </div>
+            <div id="card-bottom">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">QSO con</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Freq.</th>
+                        <th scope="col">Hora Inicio</th>
+                        <th scope="col">Hora Fin</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">RST Env.</th>
+                        <th scope="col">RST Rec.</th>
+                        <th scope="col">Modo</th>
+                        <th scope="col">Observaciones</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                  </table>
+                  <div id="card-bottom-footer">
+                      <form action="/api/adi-upload" id="adi-form" method="post" enctype="multipart/form-data">
+                          <input type="file" name="adi" id="adi">
+                          <label for="adi">
+                              Importar ADI <i class="fa-solid fa-upload"></i>
+                          </label>
+                      </form>
+                      <span>
+
+                          <a href="/api/adi-export/reset/data.adi" id="reset-adi-table" target="_blank">
+                              <!-- <input type="file" name="adi" id="adi"> -->
+                              <button>
+                                  Exportar ADI <i class="fa-solid fa-download"></i>
+                              </button>
+                            </a>
+                            <a href="/api/adi-export/data.adi" target="_blank">
+                                <!-- <input type="file" name="adi" id="adi"> -->
+                                <button>
+                                    (o exportar sin borrar)
+                                </button>
+                              </a>
+                      </span>
+                  </div>
+            </div>
+        </div>
+        <div id="finder">
+            <div id="finder-header">QRZCQ</div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="/js/frequency.js"></script>
+    <script src="/js/registry.js"></script>
+    <script src="/js/data.js"></script>
+    <script src="/js/finder.js"></script>
+    <script src="/js/adi-upload.js"></script>
+    <script src="/js/datetime.js"></script>
+    <script src="/js/new-registry.js"></script>
+    <script src="/js/index.js"></script>
+</body>
+</html>
